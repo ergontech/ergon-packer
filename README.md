@@ -5,9 +5,9 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - Vendor workflow
-    - [Adding Packer to your project](docs/ssh-access.md)
-    - [Pulling changes downstream](docs/vendor.md#)
-    - [Pushing changes upstream](docs/vendor.md#)
+    - [Adding Packer to your project](docs/vendor.md#adding-packer-to-your-project)
+    - [Pulling changes downstream](docs/vendor.md#pulling-changes-downstream)
+    - [Pushing changes upstream](docs/vendor.md#passing-changes-upstream)
 
 ## TODO
 * Create scripts for amazon and virtualbox
