@@ -1,0 +1,7 @@
+# sensitive files
+*.sensitive
+
+# packer
+builds/*.box
+packer_cache
+output-*
