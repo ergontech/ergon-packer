@@ -1,9 +1,19 @@
 # Packer
 
+## Table of Contents
+  - [Dependencies](#dependencies)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - Vendor workflow
+    - [Adding Packer to your project](docs/ssh-access.md)
+    - [Pulling changes downstream](docs/vendor.md#)
+    - [Pushing changes upstream](docs/vendor.md#)
+
 ## TODO
 * Create scripts for amazon and virtualbox
 * Create script to upload to VagrantCloud or EC2
 * Document scripts
+* Document workflow for vendor process
 
 ## Dependencies
 This README is written for Mac OSX and `homebrew`, using the `brew` command.
@@ -23,23 +33,6 @@ $ brew install \
     awscli \
     direnv \
     packer
-```
-
-## Adding Packer to your project
-```
-$ ls packer/
-ls: packer/: No such file or directory
-
-$ git checkout -b feature/add-packer
-
-$ git subtree add --prefix=packer --squash git://github.com/ergontech/ergon-packer.git master
-git fetch git://github.com/ergontech/ergon-packer.git master
-From git://github.com/ergontech/ergon-packer
- * branch            master     -> FETCH_HEAD
-Added dir 'packer'
-
-$ ls packer/
-README.md        amazon.json      http/            scripts/       virtualbox.json
 ```
 
 ## Usage
