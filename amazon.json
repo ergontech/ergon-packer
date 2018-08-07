@@ -1,0 +1,54 @@
+{
+  "variables": {
+   "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
+   "aws_region": "{{env `AWS_REGION`}}",
+   "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
+   "instance_type": "t2.medium",
+   "source_ami": "ami-4e79ed36",
+   "environment": "",
+   "groups": "",
+   "revision": "",
+   "playbook": "packer.yml",
+   "ssh_username": "ubuntu",
+   "ssh_bastion_host": "",
+   "subnet_id": "",
+   "vpc_id": ""
+  },
+  "builders": [
+    {
+      "access_key": "{{user `aws_access_key`}}",
+      "ami_name": "{{user `environment` | clean_ami_name}}-packer-{{user `groups` | clean_ami_name}}-{{timestamp | clean_ami_name}}",
+      "communicator": "ssh",
+      "instance_type": "{{user `instance_type`}}",
+      "region": "{{user `aws_region`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "source_ami": "{{user `source_ami`}}",
+      "ssh_agent_auth": true,
+      "ssh_bastion_agent_auth": true,
+      "ssh_bastion_host": "{{user `ssh_bastion_host`}}",
+      "ssh_bastion_username": "{{user `ssh_username`}}",
+      "ssh_username": "{{user `ssh_username`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+      "type": "amazon-ebs",
+      "user_data_file": "../terraform/services/files/ssh_key_setup.sh",
+      "vpc_id": "{{user `vpc_id`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "ansible_env_vars": [
+        "ANSIBLE_CONFIG=../ansible/ansible.cfg"
+      ],
+      "groups": "{{user `environment`}},{{user `groups`}}",
+      "playbook_file": "../ansible/{{user `playbook`}}",
+      "type": "ansible",
+      "user": "{{user `ssh_username`}}",
+      "extra_arguments": [
+        "--extra-vars", "deploy_hash={{user `revision`}}",
+        "-vv"
+      ]
+    }
+  ],
+  "post-processors": [
+  ]
+}
