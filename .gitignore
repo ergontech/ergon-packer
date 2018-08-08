@@ -5,6 +5,3 @@
 builds/*.box
 packer_cache
 output-*
-
-# direnv
-.envrc.local
