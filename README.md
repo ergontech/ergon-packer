@@ -13,7 +13,6 @@
 * Create scripts for amazon and virtualbox
 * Create script to upload to VagrantCloud or EC2
 * Document scripts
-* Document workflow for vendor process
 
 ## Dependencies
 This README is written for Mac OSX and `homebrew`, using the `brew` command.
@@ -36,3 +35,4 @@ $ brew install \
 ```
 
 ## Usage
+TODO
