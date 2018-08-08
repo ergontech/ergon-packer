@@ -1,8 +1,8 @@
 {
   "variables": {
-    "version": "0.0.{{timestamp}}",
+    "environment": "",
     "groups": "",
-    "testing": ""
+    "version": "0.0.{{timestamp}}"
   },
   "builders": [
     {
