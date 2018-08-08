@@ -1,7 +1,8 @@
 {
   "variables": {
-    "version": "0.0.{{timestamp}}",
-    "groups": ""
+    "environment": "",
+    "groups": "",
+    "version": "0.0.{{timestamp}}"
   },
   "builders": [
     {
