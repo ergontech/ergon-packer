@@ -13,9 +13,14 @@ From git://github.com/ergontech/ergon-packer
  * [new branch]      master     -> ergon-packer/master
 
 $ git subtree add --prefix=packer --squash ergon-packer master
-git fetch git://github.com/ergontech/ergon-packer.git master
-From git://github.com/ergontech/ergon-packer
+git fetch ergon-packer master
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 3), reused 5 (delta 3), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/ergontech/ergon-packer
  * branch            master     -> FETCH_HEAD
+   7122ab5..d277dcb  master     -> ergon-packer/master
 Added dir 'packer'
 
 $ ls packer/
