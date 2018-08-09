@@ -1,12 +1,14 @@
 {
   "variables": {
-    "environment": "",
-    "groups": "",
+    "ansible_environment": "",
+    "ansible_groups": "",
+    "build_name": "",
+    "ansible_playbook": "",
     "version": "0.0.{{timestamp}}"
   },
   "builders": [
     {
-      "name": "data",
+      "name": "{{user `build_name`}}",
       "type": "virtualbox-iso",
       "boot_wait": "5s",
       "boot_command": [
@@ -42,8 +44,8 @@
         ["modifyvm", "{{.Name}}", "--cpus", "2"]
       ],
       "guest_os_type": "Ubuntu_64",
-      "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.4-server-amd64.iso",
-      "iso_checksum": "6a7f31eb125a0b2908cf2333d7777c82",
+      "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.5-server-amd64.iso",
+      "iso_checksum": "24636fd103a2a43c95659f1c3c63718e",
       "iso_checksum_type": "md5"
     }
   ],
@@ -57,8 +59,8 @@
     },
     {
       "ansible_env_vars": ["ANSIBLE_CONFIG=../ansible/ansible.cfg"],
-      "groups": "{{user `environment`}},{{user `groups`}}",
-      "playbook_file": "../ansible/provision.yml",
+      "groups": "{{user `ansible_environment`}},{{user `ansible_groups`}}",
+      "playbook_file": "{{user `ansible_playbook`}}",
       "type": "ansible",
       "user": "vagrant"
     },
