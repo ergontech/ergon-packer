@@ -12,8 +12,8 @@ usage: $0 [-e environment] [-g groups] [-v vpc_id] [-s subnet_id] [-p playbook] 
     -h (help)           show this help
     -p (playbook)       the ansible playbook to run during build process
     -r (revision)       the revision that will be baked into an AMI
-    -s (subnet id)      the id of the subnet that the AMI will be created on
-    -v (vpc id)         the id of the vpc that the AMI will be created in
+    -s (subnet id)      the id of the private subnet that the AMI will be created on
+    -v (vpc id)         the id of the private vpc that the AMI will be created in
 
     $0 -b ssh.client.ergon.io -e review -g application,webserver -p packer.yml -r master -s subnet-e9a5ceb2 -v vpc-248eae5d
 EOF
