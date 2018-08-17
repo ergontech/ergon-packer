@@ -5,10 +5,10 @@
    "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
    "instance_type": "t2.medium",
    "source_ami": "ami-4e79ed36",
-   "environment": "",
-   "groups": "",
+   "ansible_environment": "",
+   "ansible_groups": "",
    "revision": "",
-   "playbook": "packer.yml",
+   "ansible_playbook": "packer.yml",
    "ssh_username": "ubuntu",
    "ssh_bastion_host": "",
    "subnet_id": "",
@@ -39,8 +39,8 @@
       "ansible_env_vars": [
         "ANSIBLE_CONFIG=../ansible/ansible.cfg"
       ],
-      "groups": "{{user `environment`}},{{user `groups`}}",
-      "playbook_file": "../ansible/{{user `playbook`}}",
+      "groups": "{{user `ansible_environment`}},{{user `ansible_groups`}}",
+      "playbook_file": "../ansible/{{user `ansible_playbook`}}",
       "type": "ansible",
       "user": "{{user `ssh_username`}}",
       "extra_arguments": [
