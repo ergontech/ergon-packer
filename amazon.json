@@ -17,7 +17,7 @@
   "builders": [
     {
       "access_key": "{{user `aws_access_key`}}",
-      "ami_name": "{{user `environment` | clean_ami_name}}-packer-{{user `groups` | clean_ami_name}}-{{timestamp | clean_ami_name}}",
+      "ami_name": "{{user `ansible_environment` | clean_ami_name}}-packer-{{user `ansible_groups` | clean_ami_name}}-{{timestamp | clean_ami_name}}",
       "communicator": "ssh",
       "instance_type": "{{user `instance_type`}}",
       "region": "{{user `aws_region`}}",
