@@ -44,7 +44,7 @@
       "type": "ansible",
       "user": "{{user `ssh_username`}}",
       "extra_arguments": [
-        "--extra-vars", "deploy_hash={{user `revision`}}",
+        "--extra-vars", "deploy_hash={{user `revision`}} ansible_ssh_common_args=''",
         "-vv"
       ]
     }
