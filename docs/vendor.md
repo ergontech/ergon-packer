@@ -40,7 +40,7 @@ $ git subtree pull --prefix=packer --squash ergon-packer master
 Working tree has modifications.  Cannot add.
 ```
 
-It fails since we have made changes to a file within the subtree and they have not been staged or commited
+It fails since we have made changes to a file within the subtree and they have not been staged or committed
 ```
 $ git diff
 diff --git a/packer/virtualbox.json b/packer/virtualbox.json
