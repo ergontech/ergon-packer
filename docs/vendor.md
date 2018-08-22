@@ -7,9 +7,9 @@ ls: packer/: No such file or directory
 
 $ git checkout -b feature/add-packer
 
-$ git remote add -f ergon-packer https://github.com/ergontech/ergon-packer.git
+$ git remote add -f ergon-packer git@github.com:ergontech/ergon-packer.git
 Updating ergon-packer
-From git://github.com/ergontech/ergon-packer
+From github.com:ergontech/ergon-packer
  * [new branch]      master     -> ergon-packer/master
 
 $ git subtree add --prefix=packer --squash ergon-packer master
@@ -18,7 +18,7 @@ remote: Counting objects: 6, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 6 (delta 3), reused 5 (delta 3), pack-reused 0
 Unpacking objects: 100% (6/6), done.
-From https://github.com/ergontech/ergon-packer
+From github.com:ergontech/ergon-packer
  * branch            master     -> FETCH_HEAD
    7122ab5..d277dcb  master     -> ergon-packer/master
 Added dir 'packer'
@@ -77,7 +77,7 @@ remote: Counting objects: 37, done.
 remote: Compressing objects: 100% (25/25), done.
 remote: Total 37 (delta 10), reused 35 (delta 8), pack-reused 0
 Unpacking objects: 100% (37/37), done.
-From git://github.com/ergontech/ergon-packer
+From github.com:ergontech/ergon-packer
  * branch            master     -> FETCH_HEAD
 Auto-merging packer/virtualbox.json
 CONFLICT (content): Merge conflict in packer/virtualbox.json
@@ -176,7 +176,7 @@ Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 440 bytes | 440.00 KiB/s, done.
 Total 4 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/ergontech/ergon-packer.git
+To github.com:ergontech/ergon-packer
  * [new branch]      8eaec8c469c6d8403d0b0a72810f786a4db66d9e -> feature/local-direnv
 ```
 
