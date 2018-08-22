@@ -165,10 +165,19 @@ $ git commit -m'add support for local envdir'
  2 files changed, 9 insertions(+)
 ```
 
-Push the subtree to a new branch on the ergon-packer repository
+Ensure you have the `ergon-packer` git remote installed
+```
+$ git remote add -f ergon-packer git@github.com:ergontech/ergon-packer.git
+Updating ergon-packer
+From github.com:ergontech/ergon-packer
+ * [new branch]      master     -> ergon-packer/master
+```
+
+Push our changes to the `feature/local-direnv` branch on the `ergon-packer` remote
+
 ```
 $ git subtree push --prefix=packer ergon-packer feature/local-direnv
-git push using:  ergon-packer feature/local-direnv
+git push using: ergon-packer feature/local-direnv
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
 Delta compression using up to 8 threads.
@@ -180,4 +189,4 @@ To github.com:ergontech/ergon-packer
  * [new branch]      8eaec8c469c6d8403d0b0a72810f786a4db66d9e -> feature/local-direnv
 ```
 
-Then visit the ergon-packer repository and open a Pull Request against the master branch
+Then visit the `ergon-packer` repository and open a Pull Request against the master branch
